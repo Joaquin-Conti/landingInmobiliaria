@@ -1,0 +1,289 @@
+//Color Pallet
+$mainColor: rgb(104, 131, 153);
+$paleColor: #ececec; //De otra paleta
+$oscuro: #212529;
+$celeste: #C8E2F0;
+$beige: #CBB79D;
+$militar: #444D45;
+html {
+    width: 100%;
+    background-color: white;
+}
+body {
+    font-family: 'Bree Serif', serif;
+    font-size: 1rem;
+    background-color: $mainColor;
+    color: $oscuro;
+    width: 100%;
+}
+h1 {
+    font-size: 2rem;
+}
+a {
+    color: $oscuro;
+}
+
+header {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    a img {
+        position: absolute; //para ponerlo arriba de la header-img
+        width: 200px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        box-shadow: 10px 10px 50px $oscuro;
+    }
+}
+@media (min-width: 992px) {
+    header a img {
+        width: 25%;
+    }
+}
+.mobile-nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+    // }
+    .navbar-toggler {
+        background-color: $paleColor;
+        box-shadow: 10px 10px 15px $oscuro;
+        padding: 2%; //queda más cuadradito
+    }
+
+    .navbar-collapse {
+        z-index: 1; //para que no lo tape el logo
+
+        ul {
+            background-color: $paleColor;
+            border: 1px solid;
+            box-shadow: 0 10px 35px $oscuro;
+
+            .nav-link {
+                text-align: center;
+                margin: auto;
+                border-top: 1px solid;
+                font-family: 'Merriweather', serif;
+                font-weight: 900;
+            }
+        }
+    }
+}
+
+.desktop-nav {
+    display: none;
+}
+@media (min-width: 992px) {
+    .desktop-nav {
+        display: flex !important; //porque el navbar de bootstrap está flex
+        width: 100%;
+        height: 10vh;
+        justify-content: center; 
+        font-size: 1.5rem;
+        position: sticky; //sticky
+        top: 0px; //sticky
+        z-index: 20; //sticky
+        background-color: $beige;
+        padding: 0;
+        ul {
+            display: contents; //para centrar los li
+            li {
+                margin: 0 5%;
+                a {
+                    font-family: 'Merriweather', serif;
+                    font-weight: 900;
+                    &:hover {
+                        color: $paleColor;
+                    }
+                }
+                
+            }
+        }  
+    }
+    .navbar-collapse {
+        display: none !important; //visualmente no hace falta
+        ul {
+            display: none;
+        }
+    }
+}
+// RELLENO xd
+#blank {
+    background-color: $paleColor;
+    padding: 5%;
+    .container, .row {
+        line-height: 3.5;
+        height: 100%;
+        h3 {
+            font-size: 1.3rem;
+        }
+        i:hover {
+            color: $mainColor;
+        }
+    }
+}
+
+
+// CAROUSEL
+#start {
+    position: relative;
+    height: 55vh;
+    .container {
+        padding: 0;
+        height: 100%;
+        .carousel {
+            margin: 0;
+            height: 100%;
+            .carousel-indicators {
+                li {
+                    background: $celeste;
+                    border: none;
+                }
+                .active {
+                    background: $paleColor;
+                }
+            }
+            .carousel-inner {
+                padding: 0;
+                .carousel-item {
+                    padding: 0 15%;
+                    line-height: 2;
+                    img {
+                        width: 30%;
+                    }
+                    h3 {
+                        font-family: 'Merriweather', serif;
+                        font-weight: 900;
+                        font-size: 1.3rem;
+                        margin: 7% 0 4%;
+                    }
+                    p {
+                        font-family: 'Merriweather', serif;
+                        font-size: 1.3rem;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-height: 700px) {
+    #start {
+        height: 85vh;
+    }
+}
+//GALLERY
+#gallery {
+    text-align: center;
+    padding-top: 5%;
+    background-color: $beige;
+    width: 100%;
+    .container-fluid {
+        margin-bottom: 5%;
+        h1 {
+            margin: 0; 
+        }
+        hr {
+            border-top: solid 2px;
+            width: 80%;
+        }
+    } 
+    main {
+        .row {
+            margin: 0 10%;
+            padding: 10%; // para que cuando se achique no queden imgs contra el borde
+            background-color: $paleColor;
+            box-shadow: 10px 10px 15px grey;
+            .img-box {
+                margin: 2%;
+                padding: 0;       
+                img {
+                    width: 100%;
+                    box-shadow: 10px 10px 15px grey;
+                }
+            }
+        }
+        i {
+            margin: 10% 5%;
+        }
+    }
+}
+@media (min-width: 767px) {
+    #gallery>main>.row {
+        padding: 5% 0;  //junto con el padding de arriba
+    }
+}
+//CONTACTO
+#contacto {
+    height: 100%;
+    background-color: $beige;
+    .container-fluid {
+        display: flex;
+        background-color: $paleColor;
+        height: 10vh;
+        box-shadow: 10px 10px 25px grey;     
+    }
+    form {
+        padding: 7%;
+        button {
+            background-color: $paleColor;
+            box-shadow: 5px 5px 15px grey;
+        }
+    }
+}
+@media (min-width: 767px) {
+    form {
+        margin: 0 auto;
+        width: 70%;
+    }
+    @media (min-width: 900px) {
+        form {
+            width: 50%;
+        }
+    }
+}
+
+//FOOTER
+footer {
+    text-align: center;
+    height: 40vh;
+    padding: 3% 0;
+    .container-fluid {
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+        div {
+            width: 100%;
+            .a-icons {
+                margin: 3%;
+            }
+        }
+    }
+    a{
+        &:hover {
+            color: $paleColor;
+        }
+        img {
+            width: 200px;
+        }
+    }
+}
+
+
+
+
+
+// ------------ BUGS -------------//
+// Cambiarle el color al logo, está oscuro
+// La negra se acorta
+// hamburger y nav mal hechos -> corregido parcialmente
+// arreglar indicators para desktop
+// etc etc etc
